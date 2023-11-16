@@ -1,0 +1,226 @@
+openapi: 3.0.1
+info:
+  title: E-Commerce API
+  version: 1.0.0
+  description: REST API for an E-Commerce Site
+paths:
+  /customers:
+    summary: Gets all customer data
+    description: >-
+      This path is used to retrieve all of the customers data from the
+      customers.json file.
+    get:
+      summary: Gets the customer data.
+      description: Retrieve all customer information from the customers.json file.
+      operationId: get_customers
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Customers
+  /newcustomer:
+    summary: Add a new customer.
+    description: This path is used to add a new customer to the customers.json file.
+    post:
+      summary: Add a new customer.
+      description: Adds a new customer's information to the customers.json file.
+      operationId: new_customer
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - New Customer
+  /customers/{id}:
+    summary: Retrieve/update/delete customer info.
+    description: >-
+      This path is used to retrieve/update/delete the customer's information
+      that matches the provided id.
+    get:
+      summary: Get customer information.
+      description: >-
+        Retrieve the information for a customer with the matching id from the
+        customers.json file.
+      operationId: get_customer
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Get Customer
+    put:
+      summary: Update customer information.
+      description: >-
+        Updates the contact and last login information of a customer with the
+        matching id in the customers.json file.
+      operationId: update_customer
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Update Customer
+    delete:
+      summary: Deletes a customer.
+      description: Deletes the customer with the matching id from the customers.json file.
+      operationId: delete_customer
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete Customer
+  /orders:
+    summary: Get all of the orders data.
+    description: >-
+      This path is used to retrieve all of the orders data from the orders.json
+      file.
+    get:
+      summary: Gets the order data.
+      description: Retrieve all orders information from the orders.json file.
+      operationId: get_orders
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+  /neworder:
+    summary: Add a new order.
+    description: This path is used to add a new order to the orders.json file.
+    post:
+      summary: Add a new order.
+      description: Adds a new order's information to the orders.json file.
+      operationId: new_order
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - New Order
+  /orders/{id}:
+    summary: Retrieve/update/delete order info.
+    description: >-
+      This path is used to retrieve/update the information of the order that
+      matches the provided id.
+    get:
+      summary: Get order information.
+      description: >-
+        Retrieve the information for an order with the matching id from the
+        orders.json file.
+      operationId: get_order
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Get Order
+    put:
+      summary: Update order information.
+      description: >-
+        Updates the date an order was placed/filled and the status of the order
+        with the matching id from the orders.json file.
+      operationId: update_order
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Update Order
+  /items:
+    summary: Get all of the items data.
+    description: >-
+      This path is used to retrieve all of the items data from the items.json
+      file.
+    get:
+      summary: Get the item data.
+      description: Retrieve all item information from the items.json file.
+      operationId: get_items
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Items
+  /newitem:
+    summary: Add a new item.
+    description: This path is used to add a new item to the items.json file.
+    post:
+      summary: Add a new item.
+      description: Add a new item's information to the items.json file.
+      operationId: new_item
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - New Item
+  /items/{id}:
+    summary: Retrieve/update/delete item info.
+    description: >-
+      This path is used to retrieve/update/delete the information of the item
+      that matches the provided id.
+    get:
+      summary: Get item information.
+      description: >-
+        Retrieve the information for an item with a matching id from the
+        items.json file.
+      operationId: get_item
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Get Item
+    put:
+      summary: Update item information.
+      description: >-
+        Updates the item information (name/description/price/quantity in stock)
+        of an item with the matching id in the items.json file.
+      operationId: update_item
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Update Item
+    delete:
+      summary: Deletes an item.
+      description: Deletes an item with the matching id from the items.json file.
+      operationId: delete_item
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete Item
+  /cart/{customer_id}:
+    summary: Get all of the cart data.
+    description: >-
+      This path is used to retrieve the cart data from the cart.json file for
+      the cart that matches the provided customer_id.
+    get:
+      summary: Get cart information.
+      description: >-
+        Retrieve the contents of the cart.json file that matches the provided
+        customer_id.
+      operationId: get_cart
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Cart
+  /cart/{customer_id}/{item_id}:
+    summary: Update the contents of the cart.
+    description: >-
+      This path is used to add/remove an item that matches the provided item_id
+      to the cart that matches the provided customer_id.
+    put:
+      summary: Add to cart
+      description: >-
+        Adds the item matching the provided item_id to the cart matching the
+        provided customer_id.
+      operationId: add_to_cart
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Add To Cart
+    delete:
+      summary: Delete from cart.
+      description: >-
+        Deletes the item matching the provided item_id from the cart matching
+        the provided customer_id.
+      operationId: delete_from_cart
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete From Cart
